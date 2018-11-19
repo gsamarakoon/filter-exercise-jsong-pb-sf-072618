@@ -12,7 +12,26 @@
 ```python
 # Exercise 2.2
 
-from bloomfilter import BloomFilter
+from bloomfilter import BloomFilter, BIP37_CONSTANT
+from helper import (
+    bit_field_to_bytes,
+    decode_base58,
+    hash160,
+    hash256,
+    little_endian_to_int,
+    murmur3,
+    run,
+    SIGHASH_ALL,
+)
+from ecc import PrivateKey
+from network import (
+    GetDataMessage,
+    GetHeadersMessage,
+    HeadersMessage,
+    SimpleNode,
+    FILTERED_BLOCK_DATA_TYPE,
+    TX_DATA_TYPE,
+)
 
 block_hash = bytes.fromhex('0000000053787814ed9dd8c029d0a0a9af4ab8ec0591dc31bdc4ab31fae88ce9')
 passphrase = b'Jimmy Song Programming Blockchain'  # FILL THIS IN
