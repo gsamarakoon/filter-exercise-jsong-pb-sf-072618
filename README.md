@@ -12,7 +12,26 @@
 ```python
 # Exercise 2.2
 
-from bloomfilter import BloomFilter
+from bloomfilter import BloomFilter, BIP37_CONSTANT
+from helper import (
+    bit_field_to_bytes,
+    decode_base58,
+    hash160,
+    hash256,
+    little_endian_to_int,
+    murmur3,
+    run,
+    SIGHASH_ALL,
+)
+from ecc import PrivateKey
+from network import (
+    GetDataMessage,
+    GetHeadersMessage,
+    HeadersMessage,
+    SimpleNode,
+    FILTERED_BLOCK_DATA_TYPE,
+    TX_DATA_TYPE,
+)
 
 block_hash = bytes.fromhex('<fill this in>')
 passphrase = b'<fill this in>'  # FILL THIS IN
